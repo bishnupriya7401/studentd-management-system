@@ -4,8 +4,9 @@ function addStudent() {
     let name = document.getElementById("name").value;
     let course = document.getElementById("course").value;
     let age = document.getElementById("age").value;
+     let year = document.getElementById("year").value;
 
-    if (name === "" || course === "" || age === "") {
+    if (name === "" || course === "" || age === "" || year==="") {
         alert("Please fill all fields");
         return;
     }
@@ -13,7 +14,8 @@ function addStudent() {
     let student = {
         name: name,
         course: course,
-        age: age
+        age: age,
+        year:year
     };
 
     students.push(student);
@@ -22,6 +24,7 @@ function addStudent() {
     document.getElementById("name").value = "";
     document.getElementById("course").value = "";
     document.getElementById("age").value = "";
+    document.getElementById("year").value = "";
 }
 
 
@@ -35,6 +38,7 @@ function displayStudents() {
                 <td>${student.name}</td>
                 <td>${student.course}</td>
                 <td>${student.age}</td>
+                <td>${student.year}</td>
                 <td>
                     <button onclick="deleteStudent(${index})">Delete</button>
                     <button onclick="editStudent(${index})">Edit</button>
@@ -56,6 +60,7 @@ function editStudent(index) {
     document.getElementById("name").value = student.name;
     document.getElementById("course").value = student.course;
     document.getElementById("age").value = student.age;
+    document.getElementById("year").value = student.year;
 
     deleteStudent(index);
 }
